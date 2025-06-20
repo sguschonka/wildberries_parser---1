@@ -118,13 +118,13 @@ async def goto_next(browser_page):
     buttons = browser_page.locator("a.pagination__item.pagination-item")
 
     if await buttons.count() == 0:
-        print("❌ Кнопки пагинации не найдены")
+        print("Кнопки пагинации не найдены")
         return False
 
     # Активная страница (span)
     active = browser_page.locator("span.pagination__item.active")
     if await active.count() == 0:
-        print("❌ Активная страница (span.active) не найдена")
+        print("Активная страница (span.active) не найдена")
         return False
 
     active_text = await active.text_content()
